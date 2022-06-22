@@ -68,9 +68,8 @@ function createPokemonCards(pokemon) {
     let cardsUl = document.querySelector(".cards")
     cardsUl.append(cardLi)
 }
-createPokemonCards(data[0])
-createPokemonCards(data[1])
-createPokemonCards(data[2])
-createPokemonCards(data[3])
-createPokemonCards(data[4])
-createPokemonCards(data[5])
+//createPokemonCards(data[0])
+
+for(let pokemon of data){
+    createPokemonCards(pokemon)
+}
