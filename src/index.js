@@ -27,37 +27,37 @@
 function createPokemonCards(pokemon) {
 
     let cardLi = document.createElement("li")
-    cardLi.className='card'
+    cardLi.className = 'card'
 
     let titleH2 = document.createElement("h2")
-    titleH2.className='card--tittle'
-    titleH2.textContent= pokemon.name
+    titleH2.className = 'card--tittle'
+    titleH2.textContent = pokemon.name.toUpperCase()
 
     let pokemonImg = document.createElement("img")
-    pokemonImg.className='card--img'
-    pokemonImg.width=256
-    pokemonImg.src=pokemon.sprites.other['official-artwork'].front_default
-    
+    pokemonImg.className = 'card--img'
+    pokemonImg.width = 256
+    pokemonImg.src = pokemon.sprites.other['official-artwork'].front_default
+
     let statsUl = document.createElement("ul")
-    statsUl.className='card--text'
+    statsUl.className = 'card--text'
 
     let hpLi = document.createElement("li")
-    hpLi.textContent=`${pokemon.stats[0].stat.name.toUpperCase()}: ${pokemon.stats[0].base_stat}`
+    hpLi.textContent = `${pokemon.stats[0].stat.name.toUpperCase()}: ${pokemon.stats[0].base_stat}`
 
     let attackLi = document.createElement("li")
-    attackLi.textContent=`${pokemon.stats[1].stat.name.toUpperCase()}: ${pokemon.stats[1].base_stat}`
+    attackLi.textContent = `${pokemon.stats[1].stat.name.toUpperCase()}: ${pokemon.stats[1].base_stat}`
 
     let defenseLi = document.createElement("li")
-    defenseLi.textContent=`${pokemon.stats[2].stat.name.toUpperCase()}: ${pokemon.stats[2].base_stat}`
+    defenseLi.textContent = `${pokemon.stats[2].stat.name.toUpperCase()}: ${pokemon.stats[2].base_stat}`
 
     let specialAttackLi = document.createElement("li")
-    specialAttackLi.textContent=`${pokemon.stats[3].stat.name.toUpperCase()}: ${pokemon.stats[3].base_stat}`
+    specialAttackLi.textContent = `${pokemon.stats[3].stat.name.toUpperCase()}: ${pokemon.stats[3].base_stat}`
 
     let specialDefenseLi = document.createElement("li")
-    specialDefenseLi.textContent=`${pokemon.stats[4].stat.name.toUpperCase()}: ${pokemon.stats[4].base_stat}`
+    specialDefenseLi.textContent = `${pokemon.stats[4].stat.name.toUpperCase()}: ${pokemon.stats[4].base_stat}`
 
     let speedLi = document.createElement("li")
-    speedLi.textContent=`${pokemon.stats[5].stat.name.toUpperCase()}: ${pokemon.stats[5].base_stat}`
+    speedLi.textContent = `${pokemon.stats[5].stat.name.toUpperCase()}: ${pokemon.stats[5].base_stat}`
 
 
     cardLi.append(titleH2, pokemonImg, statsUl)
@@ -70,6 +70,6 @@ function createPokemonCards(pokemon) {
 }
 //createPokemonCards(data[0])
 
-for(let pokemon of data){
+for (let pokemon of data) {
     createPokemonCards(pokemon)
 }
