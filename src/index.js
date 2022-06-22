@@ -31,33 +31,33 @@ function createPokemonCards(pokemon) {
 
     let titleH2 = document.createElement("h2")
     titleH2.className='card--tittle'
-    titleH2.textContent='Pokemon name'
+    titleH2.textContent= pokemon.name
 
     let pokemonImg = document.createElement("img")
     pokemonImg.className='card--img'
     pokemonImg.width=256
-    pokemonImg.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png'
+    pokemonImg.src=pokemon.sprites.other['official-artwork'].front_default
     
     let statsUl = document.createElement("ul")
     statsUl.className='card--text'
 
     let hpLi = document.createElement("li")
-    hpLi.textContent='HP: 45'
+    hpLi.textContent=`${pokemon.stats[0].stat.name.toUpperCase()}: ${pokemon.stats[0].base_stat}`
 
     let attackLi = document.createElement("li")
-    attackLi.textContent='ATTACK: 49'
+    attackLi.textContent=`${pokemon.stats[1].stat.name.toUpperCase()}: ${pokemon.stats[1].base_stat}`
 
     let defenseLi = document.createElement("li")
-    defenseLi.textContent='DEFENSE: 49'
+    defenseLi.textContent=`${pokemon.stats[2].stat.name.toUpperCase()}: ${pokemon.stats[2].base_stat}`
 
     let specialAttackLi = document.createElement("li")
-    specialAttackLi.textContent='SPECIAL-ATTACK: 65'
+    specialAttackLi.textContent=`${pokemon.stats[3].stat.name.toUpperCase()}: ${pokemon.stats[3].base_stat}`
 
     let specialDefenseLi = document.createElement("li")
-    specialDefenseLi.textContent='SPECIAL-DEFENSE: 65'
+    specialDefenseLi.textContent=`${pokemon.stats[4].stat.name.toUpperCase()}: ${pokemon.stats[4].base_stat}`
 
     let speedLi = document.createElement("li")
-    speedLi.textContent='SPEED: 45'
+    speedLi.textContent=`${pokemon.stats[5].stat.name.toUpperCase()}: ${pokemon.stats[5].base_stat}`
 
 
     cardLi.append(titleH2, pokemonImg, statsUl)
@@ -68,4 +68,9 @@ function createPokemonCards(pokemon) {
     let cardsUl = document.querySelector(".cards")
     cardsUl.append(cardLi)
 }
-createPokemonCards()
+createPokemonCards(data[0])
+createPokemonCards(data[1])
+createPokemonCards(data[2])
+createPokemonCards(data[3])
+createPokemonCards(data[4])
+createPokemonCards(data[5])
