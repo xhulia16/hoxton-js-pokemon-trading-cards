@@ -24,7 +24,7 @@
 //<li>SPEED: 45//</li>
 //</ul>
 //</li>
-function createPokemonCards(pokemon) {
+function createPokemonCard(pokemon) {
 
     let cardLi = document.createElement("li")
     cardLi.className = 'card'
@@ -71,5 +71,5 @@ function createPokemonCards(pokemon) {
 //createPokemonCards(data[0])
 
 for (let pokemon of data) {
-    createPokemonCards(pokemon)
+    createPokemonCard(pokemon)
 }
